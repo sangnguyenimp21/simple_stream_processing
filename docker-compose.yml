@@ -42,6 +42,7 @@ services:
                        cub kafka-ready -b kafka:9092 1 20 && \
                        kafka-topics --create --topic hit_count --if-not-exists --zookeeper zookeeper:2181 --partitions 1 --replication-factor 1 && \
                        kafka-topics --create --topic exchange_rate --if-not-exists --zookeeper zookeeper:2181 --partitions 1 --replication-factor 1 && \
+                       kafka-topics --create --topic fetch_quote --if-not-exists --zookeeper zookeeper:2181 --partitions 1 --replication-factor 1 && \
                        sleep infinity'"
     environment:
       KAFKA_BROKER_ID: ignored
